@@ -3,7 +3,7 @@ type HeatmapData = { windSpeed: string; wingSize: string; value: number }[];
 let data: HeatmapData = [];
 
 const windSpeedStart = 10;
-const windSpeedEnd = 20;
+const windSpeedEnd = 35;
 const windSpeedIncrement = 1;
 
 const wingSizeStart = 2;
@@ -21,8 +21,8 @@ for (let windSpeed = windSpeedStart; windSpeed <= windSpeedEnd; windSpeed += win
     // ideal range = 0.9 - 1.5
     // manageable = 0.8 - 0.9 & 1.5 - 2
     data.push({
-      windSpeed,
       wingSize,
+      windSpeed,
       value,
     });
   }

@@ -6,7 +6,7 @@ const MARGIN = { top: 10, right: 10, bottom: 30, left: 30 };
 type HeatmapProps = {
   width: number;
   height: number;
-  data: { windSpeed: string; wingSize: string; value: number }[];
+  data: { wingSize: string; windSpeed: string; value: number }[];
 };
 
 export const Heatmap = ({ width, height, data }: HeatmapProps) => {
@@ -15,8 +15,8 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
   // groups
-  const allYGroups = useMemo(() => [...new Set(data.map((d) => d.wingSize))], [data]);
-  const allXGroups = useMemo(() => [...new Set(data.map((d) => d.windSpeed))], [data]);
+  const allYGroups = useMemo(() => [...new Set(data.map((d) => d.windSpeed))], [data]);
+  const allXGroups = useMemo(() => [...new Set(data.map((d) => d.wingSize))], [data]);
 
   // x and y scales
   const xScale = useMemo(() => {
@@ -42,24 +42,46 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
     return null;
   }
 
+  // DDE5E7
+  // D4674C
+  // 67727E
+
+
+  // Create a custom color scale function
+  const idealColor = '#67727E'
+  const fringeColor = '#D4674C'
+  const remainingColor = '#DDE5E7'
+  function customColorScale(value) {
+    if (value >= 0.9 && value <= 1.5) {
+      return idealColor;
+    } else if (value >= 0.8 && value < 0.9) {
+      return fringeColor;
+    } else if (value > 1.5 && value <= 2) {
+      return fringeColor;
+    } else {
+      return remainingColor;
+    }
+  }
+
   // Create a color scale with the new domain based on min and max values
-  const colorScale = d3
-    .scaleSequential()
-    .interpolator(d3.interpolateInferno)
-    .domain([min, max]);
+  // const colorScale = d3
+  //   .scaleSequential()
+  //   .interpolator(d3.interpolateInferno)
+  //   .domain([min, max]);
 
   // Build the rectangles
   const allRects = data.map((d, i) => {
+    const fillColor = customColorScale(d.value);
     return (
       <rect
         key={i}
         r={4}
-        x={xScale(d.windSpeed)}
-        y={yScale(d.wingSize)}
+        x={xScale(d.wingSize)}
+        y={yScale(d.windSpeed)}
         width={xScale.bandwidth()}
         height={yScale.bandwidth()}
         opacity={1}
-        fill={colorScale(d.value)}
+        fill={fillColor}
         rx={5}
         stroke={"white"}
       />
