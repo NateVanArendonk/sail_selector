@@ -2,7 +2,7 @@
 type HeatmapData = { windSpeed: string; wingSize: string; value: number }[];
 let data: HeatmapData = [];
 
-const windSpeedStart = 10;
+const windSpeedStart = 12;
 const windSpeedEnd = 35;
 const windSpeedIncrement = 1;
 

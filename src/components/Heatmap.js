@@ -48,8 +48,8 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
 
 
   // Create a custom color scale function
-  const idealColor = '#67727E'
-  const fringeColor = '#D4674C'
+  const idealColor = '#0567A8'
+  const fringeColor = '#60E3D5'
   const remainingColor = '#DDE5E7'
   function customColorScale(value) {
     if (value >= 0.9 && value <= 1.5) {
