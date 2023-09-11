@@ -1,39 +1,29 @@
-import { useMemo } from "react";
+import React from "react";
 import * as d3 from "d3";
 
 const MARGIN = { top: 10, right: 10, bottom: 30, left: 30 };
 
-type HeatmapProps = {
-  width: number;
-  height: number;
-  data: { wingSize: string; windSpeed: string; value: number }[];
-};
-
-export const Heatmap = ({ width, height, data }: HeatmapProps) => {
+export default function Heatmap({ width, height, data }) {
   // bounds = area inside the axis
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
   // groups
-  const allYGroups = useMemo(() => [...new Set(data.map((d) => d.windSpeed))], [data]);
-  const allXGroups = useMemo(() => [...new Set(data.map((d) => d.wingSize))], [data]);
+  const allYGroups = [...new Set(data.map((d) => d.windSpeed))];
+  const allXGroups = [...new Set(data.map((d) => d.wingSize))];
 
   // x and y scales
-  const xScale = useMemo(() => {
-    return d3
-      .scaleBand()
-      .range([0, boundsWidth])
-      .domain(allXGroups)
-      .padding(0.01);
-  }, [data, width]);
+  const xScale = d3
+    .scaleBand()
+    .range([0, boundsWidth])
+    .domain(allXGroups)
+    .padding(0.01);
 
-  const yScale = useMemo(() => {
-    return d3
-      .scaleBand()
-      .range([boundsHeight, 0])
-      .domain(allYGroups)
-      .padding(0.01);
-  }, [data, height]);
+  const yScale = d3
+    .scaleBand()
+    .range([boundsHeight, 0])
+    .domain(allYGroups)
+    .padding(0.01);
 
   // Calculate the min and max values from your data
   const [min, max] = d3.extent(data.map((d) => d.value));
@@ -46,11 +36,11 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
   // D4674C
   // 67727E
 
-
   // Create a custom color scale function
-  const idealColor = '#0567A8'
-  const fringeColor = '#60E3D5'
-  const remainingColor = '#DDE5E7'
+  const idealColor = '#0567A8';
+  const fringeColor = '#60E3D5';
+  const remainingColor = '#DDE5E7';
+
   function customColorScale(value) {
     if (value >= 0.9 && value <= 1.5) {
       return idealColor;
@@ -62,12 +52,6 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
       return remainingColor;
     }
   }
-
-  // Create a color scale with the new domain based on min and max values
-  // const colorScale = d3
-  //   .scaleSequential()
-  //   .interpolator(d3.interpolateInferno)
-  //   .domain([min, max]);
 
   // Build the rectangles
   const allRects = data.map((d, i) => {
@@ -89,7 +73,7 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
   });
 
   const xLabels = allXGroups.map((name, i) => {
-    const xPos = xScale(name) ?? 0;
+    const xPos = xScale(name) || 0;
     return (
       <text
         key={i}
@@ -105,7 +89,7 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
   });
 
   const yLabels = allYGroups.map((name, i) => {
-    const yPos = yScale(name) ?? 0;
+    const yPos = yScale(name) || 0;
     return (
       <text
         key={i}
@@ -135,4 +119,4 @@ export const Heatmap = ({ width, height, data }: HeatmapProps) => {
       </svg>
     </div>
   );
-};
+}
