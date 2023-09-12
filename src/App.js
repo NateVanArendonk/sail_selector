@@ -1,34 +1,74 @@
 import React, { useState } from "react";
 import './App.css';
+import { generateData } from "./data"; // Import your generateData function
 import Heatmap from "./components/Heatmap";
 import Header from './components/Header';
-import WeightInput from './components/WeightInput';
-import { TEInput } from "tw-elements-react";
 import SubmitButton from './components/SubmitButton';
-import { generateData } from "./data"; // Import a function to generate data based on user input
+import ErrorModal from "./components/ErrorModal";
+import { TEInput } from "tw-elements-react";
 
 function App() {
   const defaultWeightStart = 200;
-  const [userWeight, setUserWeight] = useState(defaultWeightStart);
-  const heatmapData = generateData(userWeight)
+  const [userWeight, setUserWeight] = useState(defaultWeightStart); // state for user weight
+  const [inputValue, setInputValue] = useState(""); // state for value in input box
+  const [heatmapData, setHeatmapData] = useState(generateData(userWeight)); // state for heatmap data
+  const [showErrorModalModal, setShowErrorModalModal] = useState(false); // state for error popup
+
+  // Regex function to validate if the input is a valid integer
+  function isNumeric(value) {
+    return /^-?\d+$/.test(value);
+  }
+
+  // Function to handle TEInput change
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  // Function to handle submit button click
+  const handleSubmit = () => {
+    if (isNumeric(inputValue)) {
+      const newWeight = parseInt(inputValue, 10); // Assuming the input is a valid integer
+
+      // Update userWeight in state
+      setUserWeight(newWeight);
+
+      // Update heatmapData with the new userWeight
+      setHeatmapData(generateData(newWeight));
+    } else {
+      // Handle invalid input, e.g., display an error message
+      console.log("Invalid input. Please enter a valid integer.");
+      setShowErrorModalModal(true)}
+  };
 
   return (
     <div>
       <Header />
       <div className="App">
         <div className="UserSection flex">
+
           <TEInput
             type="text"
             id="exampleFormControlInput1"
             label="Enter Weight (lbs)"
             className="text-black"
+            value={inputValue}
+            onChange={handleInputChange}
           />
-          <SubmitButton />
+
+          <ErrorModal 
+            showErrorModalModal={showErrorModalModal}
+            setShowErrorModalModal={setShowErrorModalModal} 
+          />
+
+          <SubmitButton 
+            onClick={handleSubmit}
+          />
+
         </div>
         <Heatmap data={heatmapData} width={900} height={600} />
       </div>
     </div>
   );
-}
+};
 
 export default App;
