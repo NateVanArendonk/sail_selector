@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSailboat } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header() {
+export default function Navbar() {
     return (
         <nav className="flex items-center justify-between flex-wrap bg-primary p-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">

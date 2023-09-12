@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import './App.css';
 import { generateData } from "./data"; // Import your generateData function
 import Heatmap from "./components/Heatmap";
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import SubmitButton from './components/SubmitButton';
 import ErrorModal from "./components/ErrorModal";
+import GraphHeader from "./components/GraphHeader";
+import InformationModal from "./components/InformationModal";
 import { TEInput } from "tw-elements-react";
 
 // component UI library 
@@ -45,9 +47,11 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Navbar />
       <div className="App">
+        <GraphHeader />
         <div className="UserSection flex">
+
 
           <TEInput
             type="text"
