@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import SubmitButton from './components/SubmitButton';
 import ErrorModal from "./components/ErrorModal";
 import GraphHeader from "./components/GraphHeader";
-import InformationModal from "./components/InformationModal";
 import { TEInput } from "tw-elements-react";
 
 // component UI library 
