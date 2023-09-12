@@ -7,6 +7,9 @@ import SubmitButton from './components/SubmitButton';
 import ErrorModal from "./components/ErrorModal";
 import { TEInput } from "tw-elements-react";
 
+// component UI library 
+// https://tailwind-elements.com/docs/react/components/modal/
+
 function App() {
   const defaultWeightStart = 200;
   const [userWeight, setUserWeight] = useState(defaultWeightStart); // state for user weight
