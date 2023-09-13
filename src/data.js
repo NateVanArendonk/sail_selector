@@ -3,7 +3,7 @@ type HeatmapData = { windSpeed: string; wingSize: string; value: number }[];
 
 export const generateData = (userWeight: number): HeatmapData => {
   const windSpeedStart = 12;
-  const windSpeedEnd = 35;
+  const windSpeedEnd = 40;
   const windSpeedIncrement = 1;
 
   const wingSizeStart = 2;

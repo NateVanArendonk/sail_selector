@@ -32,13 +32,9 @@ export default function Heatmap({ width, height, data }) {
     return null;
   }
 
-  // DDE5E7
-  // D4674C
-  // 67727E
-
   // Create a custom color scale function
-  const idealColor = '#0567A8';
-  const fringeColor = '#60E3D5';
+  const idealColor = '#3B71CA';
+  const fringeColor = '#54B4D3';
   const remainingColor = '#DDE5E7';
 
   function customColorScale(value) {

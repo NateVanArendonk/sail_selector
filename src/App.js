@@ -49,7 +49,7 @@ function App() {
       <Navbar />
       <div className="App">
         <GraphHeader />
-        <div className="UserSection flex">
+        <div className="UserSection flex my-4">
 
 
           <TEInput
