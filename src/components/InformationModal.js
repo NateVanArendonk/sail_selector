@@ -13,7 +13,6 @@ import { faFaceSadCry, faFaceMeh, faFaceSmile } from "@fortawesome/free-solid-sv
 
 export default function InformationModal() {
   const [showInformationModal, setShowInformationModal] = useState(false);
-  const [showInformationScrollModal, setShowInformationScrollModal] = useState(false);
   return (
     <div>
       <div className="space-x-2">
