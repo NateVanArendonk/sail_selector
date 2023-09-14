@@ -19,6 +19,9 @@ function App() {
   const [heatmapData, setHeatmapData] = useState(generateData(userWeight)); // state for heatmap data
   const [showErrorModalModal, setShowErrorModalModal] = useState(false); // state for error popup
 
+  // Which heatmap to use
+  const heatmapPlottingLibrary = 'd3';
+
   // Regex function to validate if the input is a valid integer
   function isNumeric(value) {
     return /^-?\d+$/.test(value);
@@ -72,8 +75,11 @@ function App() {
           />
 
         </div>
-        {/* <Heatmap data={heatmapData} width={900} height={600} /> */}
-        <PlotlyHeatmap data={heatmapData} width={1200} height={600}/>
+          {heatmapPlottingLibrary === 'd3' ? (
+            <Heatmap data={heatmapData} width={900} height={600} />
+          ) : (
+            <PlotlyHeatmap data={heatmapData} width={1200} height={600} />
+          )}
       </div>
     </div>
   );

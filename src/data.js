@@ -1,4 +1,4 @@
-export const generateData = (userWeight) => {
+export const generateData = (userWeight, plotting) => {
   const windSpeedStart = 12;
   const windSpeedEnd = 40;
   const windSpeedIncrement = 1;
@@ -12,7 +12,7 @@ export const generateData = (userWeight) => {
 
   const userWeightKg = userWeight * 0.453592
 
-  const heatmapPlottingLibrary = 'plotly';
+  const heatmapPlottingLibrary = 'd3';
   let data;
 
   if (heatmapPlottingLibrary === 'd3') {
