@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import SubmitButton from './components/SubmitButton';
 import ErrorModal from "./components/ErrorModal";
 import GraphHeader from "./components/GraphHeader";
+import PlotlyHeatmap from "./components/PlotlyHeatmap";
 import { TEInput } from "tw-elements-react";
 
 // component UI library 
@@ -71,7 +72,8 @@ function App() {
           />
 
         </div>
-        <Heatmap data={heatmapData} width={900} height={600} />
+        {/* <Heatmap data={heatmapData} width={900} height={600} /> */}
+        <PlotlyHeatmap data={heatmapData} width={1200} height={600}/>
       </div>
     </div>
   );

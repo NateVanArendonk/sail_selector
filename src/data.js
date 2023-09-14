@@ -1,7 +1,4 @@
-// data.js
-type HeatmapData = { windSpeed: string; wingSize: string; value: number }[];
-
-export const generateData = (userWeight: number): HeatmapData => {
+export const generateData = (userWeight) => {
   const windSpeedStart = 12;
   const windSpeedEnd = 40;
   const windSpeedIncrement = 1;
@@ -15,18 +12,45 @@ export const generateData = (userWeight: number): HeatmapData => {
 
   const userWeightKg = userWeight * 0.453592
 
-  const data: HeatmapData = [];
+  const heatmapPlottingLibrary = 'plotly';
+  let data;
 
-  for (let windSpeed = windSpeedStart; windSpeed <= windSpeedEnd; windSpeed += windSpeedIncrement) {
-    for (let wingSize = wingSizeStart; wingSize <= wingSizeEnd; wingSize += wingSizeIncrement) {
-      const value = (windSpeed ** 2 / (constant1 ** 2) * wingSize / constant2 * (81 / userWeightKg));
-      data.push({
-        wingSize,
-        windSpeed,
-        value,
-      });
+  if (heatmapPlottingLibrary === 'd3') {
+    const data = [];
+    for (let windSpeed = windSpeedStart; windSpeed <= windSpeedEnd; windSpeed += windSpeedIncrement) {
+      for (let wingSize = wingSizeStart; wingSize <= wingSizeEnd; wingSize += wingSizeIncrement) {
+        const value = (windSpeed ** 2 / (constant1 ** 2) * wingSize / constant2 * (81 / userWeightKg));
+        data.push({
+          wingSize,
+          windSpeed,
+          value,
+        });
+      }
     }
-  }
+    return data
+  } else if (heatmapPlottingLibrary === 'plotly') {
+    const data = {
+      windSpeed: Array.from(
+        { length: (windSpeedEnd - windSpeedStart) / windSpeedIncrement + 1 },
+        (_, i) => windSpeedStart + windSpeedIncrement * i
+      ),
+      wingSize: Array.from(
+        { length: (wingSizeEnd - wingSizeStart) / wingSizeIncrement + 1 },
+        (_, i) => wingSizeStart + wingSizeIncrement * i
+      ),
+    };
 
-  return data;
+    const zdata = [];
+    for (let windSpeed = windSpeedStart; windSpeed <= windSpeedEnd; windSpeed += windSpeedIncrement) {
+      const sublist = [];
+      for (let wingSize = wingSizeStart; wingSize <= wingSizeEnd; wingSize += wingSizeIncrement) {
+        const value = (windSpeed ** 2 / (constant1 ** 2) * wingSize / constant2 * (81 / userWeightKg));
+        sublist.push(value);
+      }
+      zdata.push(sublist);
+    }
+
+    data['values'] = zdata
+    return data
+  }
 };
