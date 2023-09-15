@@ -4,7 +4,6 @@ import Plot from 'react-plotly.js';
 export default function PlotlyHeatmap(props) {
     const plotWidth = props.width
     const plotHeight = props.height
-    const data = props.data
     const xVals = props.data.wingSize
     const yVals = props.data.windSpeed
     const zVals = props.data.values
@@ -25,9 +24,6 @@ export default function PlotlyHeatmap(props) {
         return remainingColor;
         }
     }
-
-    const coloredData = zVals.map(row => row.map(value => customColorScale(value)));
-
 
     // Define your custom color scale using Plotly-compatible stops
     const customColorScaleStops = [
