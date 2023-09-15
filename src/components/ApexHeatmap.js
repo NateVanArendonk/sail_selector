@@ -93,11 +93,11 @@ export default function ApexHeatmap(props) {
                     if (value >= 0 && value < 0.8) {
                         return "Bad Winging Conditions";
                     } else if (value >= 0.8 && value < 0.9) {
-                        return "Manageable Conditions";
+                        return "Manageable Winging Conditions";
                     } else if (value >= 0.9 && value < 1.5) {
-                        return "Ideal Conditions";
+                        return "Ideal Winging Conditions";
                     } else if (value >= 1.5 && value < 2.0) {
-                        return "Manageable Conditions";
+                        return "Manageable Winging Conditions";
                     } else {
                         return "Bad Winging Conditions";
                     }
