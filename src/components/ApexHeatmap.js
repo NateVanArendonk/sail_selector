@@ -41,13 +41,18 @@ export default function ApexHeatmap(props) {
                     },
                 },
                 title: {
-                    text: 'Wing Size [m]', // Set x-axis label here
+                    text: 'Wing Size [m]', // Set y-axis label here
                     style: {
                         fontSize: '18px', // You can customize label font size and other styles
                     },
                 },
             },
             yaxis: {
+                labels: {
+                    style: {
+                        fontSize: '12px',
+                    },
+                },
                 title: {
                     text: 'Wind Speed [mph]', // Set y-axis label here
                     style: {
@@ -88,28 +93,25 @@ export default function ApexHeatmap(props) {
                     },
                 },
             },
-
-         tooltip: {
-                custom: function({ seriesIndex, dataPointIndex, w }) {
-                    // Customize the tooltip content based on your value ranges
-                    const value = w.globals.series[seriesIndex][dataPointIndex];
-                    if (value >= 0 && value < 0.8) {
-                        return "Bad Winging Conditions";
-                    } else if (value >= 0.8 && value < 0.9) {
-                        return "Manageable Winging Conditions";
-                    } else if (value >= 0.9 && value < 1.5) {
-                        return "Ideal Winging Conditions";
-                    } else if (value >= 1.5 && value < 2.0) {
-                        return "Manageable Winging Conditions";
-                    } else {
-                        return "Bad Winging Conditions";
-                    }
+            tooltip: {
+                    custom: function({ seriesIndex, dataPointIndex, w }) {
+                        // Customize the tooltip content based on your value ranges
+                        const value = w.globals.series[seriesIndex][dataPointIndex];
+                        if (value >= 0 && value < 0.8) {
+                            return "Bad Winging Conditions";
+                        } else if (value >= 0.8 && value < 0.9) {
+                            return "Manageable Winging Conditions";
+                        } else if (value >= 0.9 && value < 1.5) {
+                            return "Ideal Winging Conditions";
+                        } else if (value >= 1.5 && value < 2.0) {
+                            return "Manageable Winging Conditions";
+                        } else {
+                            return "Bad Winging Conditions";
+                        }
+                    },
                 },
-            },
-            
         },
     };
-
     return (
         <div>
             <ReactApexChart
