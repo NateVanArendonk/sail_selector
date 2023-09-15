@@ -13,7 +13,7 @@ export const generateData = (userWeight, heatmapLibrary) => {
   const userWeightKg = userWeight * 0.453592
 
   const heatmapPlottingLibrary = heatmapLibrary;
-  let data;
+  // let data;
 
   if (heatmapPlottingLibrary === 'd3') {
     const data = [];
