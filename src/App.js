@@ -8,19 +8,19 @@ import ErrorModal from "./components/ErrorModal";
 import GraphHeader from "./components/GraphHeader";
 import PlotlyHeatmap from "./components/PlotlyHeatmap";
 import { TEInput } from "tw-elements-react";
+import ApexHeatmap from "./components/ApexHeatmap";
 
 // component UI library 
 // https://tailwind-elements.com/docs/react/components/modal/
 
 function App() {
+  // Which heatmap to use
+  const heatmapPlottingLibrary = 'apex';
   const defaultWeightStart = 200;
   const [userWeight, setUserWeight] = useState(defaultWeightStart); // state for user weight
   const [inputValue, setInputValue] = useState(""); // state for value in input box
-  const [heatmapData, setHeatmapData] = useState(generateData(userWeight)); // state for heatmap data
+  const [heatmapData, setHeatmapData] = useState(generateData(userWeight, heatmapPlottingLibrary)); // state for heatmap data
   const [showErrorModalModal, setShowErrorModalModal] = useState(false); // state for error popup
-
-  // Which heatmap to use
-  const heatmapPlottingLibrary = 'd3';
 
   // Regex function to validate if the input is a valid integer
   function isNumeric(value) {
@@ -41,7 +41,7 @@ function App() {
       setUserWeight(newWeight);
 
       // Update heatmapData with the new userWeight
-      setHeatmapData(generateData(newWeight));
+      setHeatmapData(generateData(newWeight, heatmapPlottingLibrary));
     } else {
       // Handle invalid input, e.g., display an error message
       console.log("Invalid input. Please enter a valid integer.");
@@ -75,11 +75,15 @@ function App() {
           />
 
         </div>
-          {heatmapPlottingLibrary === 'd3' ? (
+          {/* {heatmapPlottingLibrary === 'd3' ? (
             <Heatmap data={heatmapData} width={900} height={600} />
           ) : (
             <PlotlyHeatmap data={heatmapData} width={1200} height={600} />
-          )}
+          )} */}
+
+          <ApexHeatmap data={heatmapData} />
+
+
       </div>
     </div>
   );
