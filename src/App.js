@@ -75,15 +75,13 @@ function App() {
           />
 
         </div>
-          {/* {heatmapPlottingLibrary === 'd3' ? (
+          {heatmapPlottingLibrary === 'd3' ? (
             <Heatmap data={heatmapData} width={900} height={600} />
-          ) : (
+          ) : heatmapPlottingLibrary === 'plotly' ? (
             <PlotlyHeatmap data={heatmapData} width={1200} height={600} />
-          )} */}
-
-          <ApexHeatmap data={heatmapData} />
-
-
+          ) : (
+            <ApexHeatmap data={heatmapData} />
+          )}
       </div>
     </div>
   );
