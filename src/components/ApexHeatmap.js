@@ -30,6 +30,9 @@ export default function ApexHeatmap(props) {
             dataLabels: {
                 enabled: false
             },
+            legend: {
+                show: false
+            },
             xaxis: {
                 categories: convertListValuesToString(xData), // Set x-axis labels here
                 labels: {
