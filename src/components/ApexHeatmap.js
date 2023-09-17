@@ -41,7 +41,7 @@ export default function ApexHeatmap(props) {
                     },
                 },
                 title: {
-                    text: 'Wing Size [m]', // Set y-axis label here
+                    text: 'Wing Size (m)', // Set y-axis label here
                     style: {
                         fontSize: '18px', // You can customize label font size and other styles
                     },
@@ -54,7 +54,7 @@ export default function ApexHeatmap(props) {
                     },
                 },
                 title: {
-                    text: 'Wind Speed [mph]', // Set y-axis label here
+                    text: 'Wind Speed (mph)', // Set y-axis label here
                     style: {
                         fontSize: '18px', // You can customize label font size and other styles
                     },
