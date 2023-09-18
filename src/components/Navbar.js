@@ -7,15 +7,15 @@ import { TERipple } from "tw-elements-react";
 
 export default function Navbar(props) {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    // const navigateToAbout = () => {
-    //     navigate('/about');
-    // };
+    const navigateToAbout = () => {
+        navigate('/about');
+    };
 
-    // const navigateHome = () => {
-    //     navigate('/');
-    // };
+    const navigateHome = () => {
+        navigate('/');
+    };
 
     return (
         <nav className="flex items-center justify-between flex-wrap bg-primary p-6">
