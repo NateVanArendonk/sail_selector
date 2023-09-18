@@ -14,9 +14,9 @@ export default function Navbar(props) {
         navigate('/about');
     };
 
-    const navigateHome = () => {
-        navigate('/');
-    };
+    // const navigateHome = () => {
+    //     navigate('/');
+    // };
 
     return (
         <nav className="flex items-center justify-between flex-wrap bg-primary p-6">
