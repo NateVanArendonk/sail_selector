@@ -59,6 +59,14 @@ export default function ApexHeatmap(props) {
                         fontSize: '18px', // You can customize label font size and other styles
                     },
                 },
+                axisTicks: {
+                    show: true,
+                    borderType: 'solid',
+                    // color: '#78909C',
+                    width: 6,
+                    offsetX: 0,
+                    offsetY: 0
+                },
             },
             plotOptions: {
                 heatmap: {
@@ -94,22 +102,60 @@ export default function ApexHeatmap(props) {
                 },
             },
             tooltip: {
-                    custom: function({ seriesIndex, dataPointIndex, w }) {
-                        // Customize the tooltip content based on your value ranges
-                        const value = w.globals.series[seriesIndex][dataPointIndex];
-                        if (value >= 0 && value < 0.8) {
-                            return "Bad Winging Conditions";
-                        } else if (value >= 0.8 && value < 0.9) {
-                            return "Manageable Winging Conditions";
-                        } else if (value >= 0.9 && value < 1.5) {
-                            return "Ideal Winging Conditions";
-                        } else if (value >= 1.5 && value < 2.0) {
-                            return "Manageable Winging Conditions";
-                        } else {
-                            return "Bad Winging Conditions";
-                        }
+                enabled: true,
+                shared: true,
+                followCursor: false,
+                intersect: false,
+                inverseOrder: false,
+                fillSeriesColor: false,
+                theme: 'light',
+                style: {
+                    fontSize: '12px',
+                    fontFamily: undefined,
+                    background: 'white',
+                    border: '1px solid #ccc',
+                    padding: '10px',
+                },
+                onDatasetHover: {
+                    highlightDataSeries: false,
+                },
+                x: {
+                    show: true,
+                    formatter: function(val) {
+                        return `Wing Size: ${val}`;
                     },
                 },
+                y: {
+                    formatter: function(val, { seriesIndex, dataPointIndex, w }) {
+                        const seriesName = w.config.series[seriesIndex].name;
+                        let toolTipText = ''
+                        if (val >= 0 && val < 0.8) {
+                            toolTipText = "Bad Winging Conditions";
+                        } else if (val >= 0.8 && val < 0.9) {
+                            toolTipText = "Manageable Winging Conditions";
+                        } else if (val >= 0.9 && val < 1.5) {
+                            toolTipText = "Ideal Winging Conditions";
+                        } else if (val >= 1.5 && val < 2.0) {
+                            toolTipText = "Manageable Winging Conditions";
+                        } else {
+                            toolTipText = "Bad Winging Conditions";
+                        }
+                        return `${seriesName} mph: ${toolTipText}`;
+                    },
+                    title: {
+                        formatter: () => '', // Set the y-axis title to "Wind Speed"
+                    },
+                },
+                marker: {
+                    show: true,
+                },
+                fixed: {
+                    enabled: false,
+                    position: 'topRight',
+                    offsetX: 0,
+                    offsetY: 0,
+                },
+            },
         },
     };
     return (
