@@ -118,8 +118,8 @@ export default function ApexHeatmap(props) {
                 options={heatmapOptions.options}
                 series={heatmapOptions.series}
                 type="heatmap"
-                height={600}
-                width={900}
+                height={700}
+                width={1000}
             />
         </div>
     );

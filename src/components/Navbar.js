@@ -19,7 +19,7 @@ export default function Navbar(props) {
     // };
 
     return (
-        <nav className="flex items-center justify-between flex-wrap bg-primary p-6">
+        <nav className="flex items-center justify-between flex-wrap bg-primary p-4">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 <FontAwesomeIcon icon={faSailboat} />
                 <span className="font-semibold text-xl tracking-tight">Sail Selector</span>
