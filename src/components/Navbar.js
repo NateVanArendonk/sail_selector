@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSailboat } from "@fortawesome/free-solid-svg-icons";
 import { TERipple } from "tw-elements-react";
+import {useNavigate} from 'react-router-dom';
 // import {Routes, Route, useNavigate} from 'react-router-dom';
 // import About from "./About";
 
