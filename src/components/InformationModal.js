@@ -49,6 +49,11 @@ export default function InformationModal(props) {
                 </h6>
 
                 <h6 className="mb-4 mt-0 text-md leading-tight text-info flex items-center">
+                    <div className="w-4 h-4 bg-warning rounded-sm mr-2"></div>
+                    <p className="leading-7 font-light text-gray-800 text-sm"> These conditions can get dangerous - Variable Fun Factor</p>
+                </h6>
+
+                <h6 className="mb-4 mt-0 text-md leading-tight text-info flex items-center">
                     <div className="w-4 h-4 bg-info rounded-sm mr-2"></div>
                     <p className="leading-7 font-light text-gray-800 text-sm"> These conditions will require a bit more work - Variable Fun Factor</p>
                 </h6>
