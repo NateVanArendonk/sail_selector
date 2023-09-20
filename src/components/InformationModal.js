@@ -22,6 +22,13 @@ export default function InformationModal(props) {
             <TEModalHeader>
               <h5 className="text-xl font-semibold">
                 How To Use This Graph
+                <img
+                  src="./guide-book.png"
+                  className="w-12 inline-block mx-2"
+                  width="512"
+                  height="512"
+                  alt="burger illustration"
+                />
               </h5>
               <button
                 type="button"
@@ -35,21 +42,18 @@ export default function InformationModal(props) {
               <p className="mb-4 text-gray-700 text-md">
                     Enter your weight and the graph will show the ideal conditions when to go wing foiling. 
                     Using our proprietary algorithm, we can help you optimize your quiver and when you head out on the water.
-              <hr
-              className="my-4 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
-              />
 
-                <h6 className="mb-4 mt-0 text-base text-md leading-tight text-primary flex items-center">
+                <h6 className="mb-4 mt-4 text-md leading-tight text-primary flex items-center">
                     <div className="w-4 h-4 bg-primary rounded-sm mr-2"></div>
                     <p className="text-gray-700 text-sm"> These are your ideal winging conditions - High Fun Factor!</p>
                 </h6>
 
-                <h6 className="mb-4 mt-0 text-base text-md leading-tight text-info flex items-center">
+                <h6 className="mb-4 mt-0 text-md leading-tight text-info flex items-center">
                     <div className="w-4 h-4 bg-info rounded-sm mr-2"></div>
                     <p className="text-gray-700 text-sm"> These conditions will require a bit more work - Variable Fun Factor</p>
                 </h6>
 
-                <h6 className="mt-0 text-base text-md leading-tight text-[#b0b7b8] flex items-center">
+                <h6 className="mt-0 text-md leading-tight text-[#b0b7b8] flex items-center">
                     <div className="w-4 h-4 bg-[#b0b7b8] rounded-sm mr-2"></div>
                     <p className="text-gray-700 text-sm"> We do not recommend winging in these conditions - Low Fun Factor</p>
                 </h6>
