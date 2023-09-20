@@ -14,7 +14,7 @@ import InformationModal from "./InformationModal";
 
 export default function Home() {
     const heatmapPlottingLibrary = 'apex';
-    const defaultWeightStart = 200;
+    const defaultWeightStart = 180;
     const [userWeight, setUserWeight] = useState(defaultWeightStart); // state for user weight
     const [inputValue, setInputValue] = useState(""); // state for value in input box
     const [heatmapData, setHeatmapData] = useState(generateData(userWeight, heatmapPlottingLibrary)); // state for heatmap data
