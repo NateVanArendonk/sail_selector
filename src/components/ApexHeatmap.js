@@ -13,6 +13,7 @@ export default function ApexHeatmap(props) {
     const idealColor = '#3B71CA';
     const fringeColor = '#54B4D3';
     const remainingColor = '#DDE5E7';
+    const overpoweredColor = '#E4A11B';
 
     const result = zData.map((list, index) => ({
         name: `${yData[index]}`,
@@ -93,7 +94,7 @@ export default function ApexHeatmap(props) {
                             {
                                 from: 1.5,
                                 to: 2.0,
-                                color: fringeColor, // Blue for values between 1.01 and 2
+                                color: overpoweredColor, // Blue for values between 1.01 and 2
                             },
                             {
                                 from: 2.0,
@@ -135,11 +136,11 @@ export default function ApexHeatmap(props) {
                         if (val >= 0 && val < 0.8) {
                             toolTipText = "Bad Winging Conditions";
                         } else if (val >= 0.8 && val < 0.9) {
-                            toolTipText = "Manageable Winging Conditions";
+                            toolTipText = "Underpowered Winging Conditions";
                         } else if (val >= 0.9 && val < 1.5) {
                             toolTipText = "Ideal Winging Conditions";
                         } else if (val >= 1.5 && val < 2.0) {
-                            toolTipText = "Manageable Winging Conditions";
+                            toolTipText = "Overpowered Winging Conditions";
                         } else {
                             toolTipText = "Bad Winging Conditions";
                         }
