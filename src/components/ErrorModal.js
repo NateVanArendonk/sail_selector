@@ -21,7 +21,7 @@ export default function ErrorModal(props) {
           <TEModalContent >
 
             <TEModalHeader>
-              <h5 className="text-xl font-bold leading-normal text-neutral-800">
+              <h5 className="text-xl font-semibold">
                 User Weight Error
               </h5>
               <button
@@ -34,7 +34,7 @@ export default function ErrorModal(props) {
             </TEModalHeader>
 
             <TEModalBody>
-              <p>Please enter a valid weight in pounds!</p>
+              <p className="text-gray-700 text-sm">Oops! Looks like what you entered is not a valid weight. Make sure you just enter your weight as digits - there is no need to add units e.g. "pounds" or "lbs".</p>
             </TEModalBody>
 
             <TEModalFooter>

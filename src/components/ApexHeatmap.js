@@ -31,13 +31,15 @@ export default function ApexHeatmap(props) {
                 enabled: false
             },
             legend: {
-                show: false
+                show: false,
+                position: 'top',
             },
             xaxis: {
                 categories: convertListValuesToString(xData), // Set x-axis labels here
                 labels: {
                     style: {
                         fontSize: '12px', // You can customize label font size and other styles
+                        fontFamily: 'sans-serif',
                     },
                 },
                 title: {
@@ -51,6 +53,7 @@ export default function ApexHeatmap(props) {
                 labels: {
                     style: {
                         fontSize: '12px',
+                        fontFamily: 'sans-serif',
                     },
                 },
                 title: {
@@ -104,25 +107,25 @@ export default function ApexHeatmap(props) {
             tooltip: {
                 enabled: true,
                 shared: true,
-                followCursor: false,
+                followCursor: true,
                 intersect: false,
                 inverseOrder: false,
-                fillSeriesColor: false,
                 theme: 'light',
                 style: {
                     fontSize: '12px',
-                    fontFamily: undefined,
+                    fontFamily: "sans-serif",
                     background: 'white',
                     border: '1px solid #ccc',
-                    padding: '10px',
+                    padding: '2px',
                 },
+                fillSeriesColor: true,
                 onDatasetHover: {
-                    highlightDataSeries: false,
+                    highlightDataSeries: true,
                 },
                 x: {
                     show: true,
                     formatter: function(val) {
-                        return `Wing Size: ${val}`;
+                        return `Wing Size: ${val} meter`;
                     },
                 },
                 y: {
@@ -147,14 +150,17 @@ export default function ApexHeatmap(props) {
                     },
                 },
                 marker: {
-                    show: true,
+                    show: false,
                 },
                 fixed: {
                     enabled: false,
                     position: 'topRight',
-                    offsetX: 0,
+                    offsetX: 40,
                     offsetY: 0,
                 },
+                customLegendItems: {
+                        
+                }
             },
         },
     };

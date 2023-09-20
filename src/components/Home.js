@@ -4,10 +4,12 @@ import { generateData } from "../data";
 import Heatmap from "./Heatmap";
 import SubmitButton from './SubmitButton';
 import ErrorModal from "./ErrorModal";
-import GraphHeader from "./GraphHeader";
+// import GraphHeader from "./GraphHeader";
 import ApexHeatmap from "./ApexHeatmap";
 import { TEInput } from "tw-elements-react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import InformationModal from "./InformationModal";
 
 
 export default function Home() {
@@ -17,7 +19,8 @@ export default function Home() {
     const [inputValue, setInputValue] = useState(""); // state for value in input box
     const [heatmapData, setHeatmapData] = useState(generateData(userWeight, heatmapPlottingLibrary)); // state for heatmap data
     const [showErrorModalModal, setShowErrorModalModal] = useState(false); // state for error popup
-  
+    const [showInformationModal, setShowInformationModal] = useState(false);
+
     // Regex function to validate if the input is a valid integer
     function isNumeric(value) {
       return /^-?\d+$/.test(value);
@@ -39,14 +42,30 @@ export default function Home() {
         // Update heatmapData with the new userWeight
         setHeatmapData(generateData(newWeight, heatmapPlottingLibrary));
       } else {
-        // Handle invalid input, e.g., display an error message
-        console.log("Invalid input. Please enter a valid integer.");
         setShowErrorModalModal(true)}
     };
+
     return (
-        <div className="App mt-6">
-            <GraphHeader />
-            <div className="UserSection flex my-4 mb-0">
+        <div className="App">
+            <div>
+                <div className="flex item-center">
+                    <div className="">
+                        <div className="text-center">
+                            <h1 className="text-gray-900 font-bold text-5xl md:text-6xl xl:text-7xl">Find the perfect <span className="text-primary dark:text-white">wing size.</span></h1>
+                            <p className="mt-0 mb-6 text-gray-700 inline-block">Enter your weight below and find your ideal conditions for wing foiling.</p>
+                            <button 
+                                className="info-button inline-block ml-2"
+                                type="button"
+                                onClick={() => setShowInformationModal(true)}
+                            >
+                                <FontAwesomeIcon icon={faInfoCircle} />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="UserSection flex item-center mt-6 mb-0">
                 <TEInput
                     type="text"
                     id="exampleFormControlInput1"
@@ -61,11 +80,17 @@ export default function Home() {
                     setShowErrorModalModal={setShowErrorModalModal} 
                 />
 
+                <InformationModal
+                    showInformationModal={showInformationModal}
+                    setShowInformationModal={setShowInformationModal}
+                />
+
                 <SubmitButton 
                     onClick={handleSubmit}
                 />
 
             </div>
+
             {heatmapPlottingLibrary === 'd3' ? (
                 <Heatmap data={heatmapData} width={900} height={600} />
             ) : (
