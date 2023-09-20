@@ -17,12 +17,12 @@ export default function About() {
 
                 <div>
                     <h2 className="text-4xl font-semibold mb-2">What is Sail Selector?</h2>
-                    <p className="text-gray-600 text-lg leading-7 mb-6">Sail Selector is your ultimate wing foiling companion, removing the guesswork from selecting the perfect wing for your next session.</p>
+                    <p className="text-gray-600 text-lg leading-7 mb-6">Sail Selector is your ultimate wing selection companion for wing foiling. It removes the guesswork from selecting the perfect wing for your next session.</p>
                 </div>
 
             </div>
 
-
+            <h2 className="text-3xl font-semibold mb-2 mt-8">How it works</h2>
             <div
                 class="mt-0 grid divide-x divide-y divide-gray-100 overflow-hidden rounded-3xl border border-gray-200 text-gray-600 grid-cols-3"
             >

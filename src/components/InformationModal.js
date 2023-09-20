@@ -41,7 +41,7 @@ export default function InformationModal(props) {
             <TEModalBody>
               <p className="mb-4 text-gray-700 text-md">
                     Enter your weight and the graph will show the ideal conditions when to go wing foiling. 
-                    Using our proprietary algorithm, we can help you optimize your quiver and when you head out on the water.
+                    Using our proprietary algorithm, we can help you optimize your quiver and find the best times to head out on the water.
 
                 <h6 className="mb-4 mt-4 text-md leading-tight text-primary flex items-center">
                     <div className="w-4 h-4 bg-primary rounded-sm mr-2"></div>
