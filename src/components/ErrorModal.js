@@ -23,6 +23,13 @@ export default function ErrorModal(props) {
             <TEModalHeader>
               <h5 className="text-xl font-semibold">
                 User Weight Error
+                <img
+                  src="./warning.png"
+                  className="w-12 inline-block mx-2"
+                  width="512"
+                  height="512"
+                  alt="burger illustration"
+                />
               </h5>
               <button
                 type="button"
