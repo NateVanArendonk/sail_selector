@@ -11,7 +11,7 @@ export default function About() {
     };
 
     return (
-        <main className="container mx-auto mt-2 p-8 bg-white rounded-lg shadow-lg">
+        <main className="container mx-auto mt-2 p-8 bg-white">
 
             <div className="grid grid-cols-2 gap-8">
 
