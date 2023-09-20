@@ -20,7 +20,7 @@ export default function InformationModal(props) {
         <TEModalDialog centered>
           <TEModalContent>
             <TEModalHeader>
-              <h5 className="text-xl font-semibold">
+              <h5 className="text-xl font-semibold text-gray-700">
                 How To Use This Graph
                 <img
                   src="./guide-book.png"
@@ -39,23 +39,23 @@ export default function InformationModal(props) {
               </button>
             </TEModalHeader>
             <TEModalBody>
-              <p className="mb-4 text-gray-700 text-md">
+              <p className="mb-4 font-light text-gray-500 text-md">
                     Enter your weight and the graph will show the ideal conditions when to go wing foiling. 
                     Using our proprietary algorithm, we can help you optimize your quiver and find the best times to head out on the water.
 
                 <h6 className="mb-4 mt-4 text-md leading-tight text-primary flex items-center">
                     <div className="w-4 h-4 bg-primary rounded-sm mr-2"></div>
-                    <p className="text-gray-700 text-sm"> These are your ideal winging conditions - High Fun Factor!</p>
+                    <p className="leading-7 font-light text-gray-800 text-sm"> These are your ideal winging conditions - High Fun Factor!</p>
                 </h6>
 
                 <h6 className="mb-4 mt-0 text-md leading-tight text-info flex items-center">
                     <div className="w-4 h-4 bg-info rounded-sm mr-2"></div>
-                    <p className="text-gray-700 text-sm"> These conditions will require a bit more work - Variable Fun Factor</p>
+                    <p className="leading-7 font-light text-gray-800 text-sm"> These conditions will require a bit more work - Variable Fun Factor</p>
                 </h6>
 
                 <h6 className="mt-0 text-md leading-tight text-[#b0b7b8] flex items-center">
                     <div className="w-4 h-4 bg-[#b0b7b8] rounded-sm mr-2"></div>
-                    <p className="text-gray-700 text-sm"> We do not recommend winging in these conditions - Low Fun Factor</p>
+                    <p className="leading-7 font-light text-gray-800 text-sm"> We do not recommend winging in these conditions - Low Fun Factor</p>
                 </h6>
 
               </p>

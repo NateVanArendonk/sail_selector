@@ -66,15 +66,15 @@ export default function About() {
                         Our proprietary algorithm works its magic and creates a color-coded map for your ideal wing foiling settings. Colors correspond with:
                         <div className="flex items-center mt-4">
                             <div className="w-4 h-4 bg-primary rounded-sm mr-2"></div>
-                            <p className="eading-7 font-light text-gray-500 text-sm">Ideal Conditions - High Fun Factor</p>
+                            <p className="leading-7 font-light text-gray-500 text-sm">Ideal Conditions - High Fun Factor</p>
                         </div>
                         <div className="flex items-center mt-2">
                             <div className="w-4 h-4 bg-info rounded-sm mr-2"></div>
-                            <p className="eading-7 font-light text-gray-500 text-sm">Manageable Conditions - Variable Fun Factor</p>
+                            <p className="leading-7 font-light text-gray-500 text-sm">Manageable Conditions - Variable Fun Factor</p>
                         </div>
                         <div className="flex items-center mt-2">
                             <div className="w-4 h-4 bg-[#b0b7b8] rounded-sm mr-2"></div>
-                            <p className="eading-7 font-light text-gray-500 text-sm">Difficult Conditions - Low Fun Factor</p>
+                            <p className="leading-7 font-light text-gray-500 text-sm">Difficult Conditions - Low Fun Factor</p>
                         </div>
                     </p>
                     </div>
