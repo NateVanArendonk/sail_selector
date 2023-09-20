@@ -52,7 +52,7 @@ export default function Home() {
                     <div className="">
                         <div className="text-center">
                             <h1 className="text-gray-900 font-bold text-5xl md:text-6xl xl:text-7xl">Find the perfect <span className="text-primary dark:text-white">wing size.</span></h1>
-                            <p className="mt-0 mb-6 text-gray-700 inline-block">Enter your weight below and find your ideal conditions for wing foiling.</p>
+                            <p className="mt-0 mb-6 inline-block font-light text-center text-gray-500 text-lg">Enter your weight below and find your ideal conditions for wing foiling.</p>
                             <button 
                                 className="info-button inline-block ml-2"
                                 type="button"
@@ -87,6 +87,7 @@ export default function Home() {
 
                 <SubmitButton 
                     onClick={handleSubmit}
+                    buttonText={'Submit'}
                 />
 
             </div>
