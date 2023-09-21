@@ -135,7 +135,6 @@ export default function About() {
                 <p className="eading-7 font-light text-gray-500 text-lg">Sail Selector builds confidence in your wing selection process and makes choosing the perfect wing size a breeze.</p>
             </div>
             </div>
-
         </main>
     )
 }

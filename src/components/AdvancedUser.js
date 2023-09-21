@@ -1,12 +1,12 @@
 import React from "react";
 import '../App.css';
 import SubmitButton from './SubmitButton';
-import ErrorModal from "./ErrorModal";
+import ErrorModalAdvanced from "./ErrorModalAdvanced";
 import ApexHeatmap from "./ApexHeatmap";
 import { TEInput } from "tw-elements-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import InformationModal from "./InformationModal";
+import InformationModalAdvanced from "./InformationModalAdvanced";
 
 
 
@@ -33,12 +33,12 @@ export default function AdvancedUser(props) {
 
             <div className="UserSection flex item-center mt-6 mb-0">
 
-                <ErrorModal 
+                <ErrorModalAdvanced 
                     showErrorModalModal={props.showErrorModalModal}
                     setShowErrorModalModal={props.setShowErrorModalModal} 
                 />
 
-                <InformationModal
+                <InformationModalAdvanced
                     showInformationModal={props.showInformationModal}
                     setShowInformationModal={props.setShowInformationModal}
                 />
