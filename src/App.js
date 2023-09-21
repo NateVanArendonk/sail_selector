@@ -11,6 +11,7 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [advancedToggle, setAdvancedToggle] = useState(true);
+  const [showContactModal, setShowContactModal] = useState(false);
 
    // Function to handle toggle click
   const handleToggle = () => {
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home advancedToggle={advancedToggle}/>} />
         <Route exact path="/about" element={<About />} />
-        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/contact" element={<Contact showContactModal={showContactModal} setShowContactModal={setShowContactModal}/>} />
       </Routes>
       </div>
     </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import SubmitButton from "./SubmitButton";
+import ContactModal from "./ContactModal";
 
-export default function Contact() {
+export default function Contact(props) {
     return (
         <section class="bg-white">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -22,9 +23,11 @@ export default function Contact() {
                     <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your message</label>
                     <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 transition hover:scale-105" placeholder="Leave a comment..."></textarea>
                 </div>
-                <SubmitButton buttonText={'Send Message'}/>
+                <SubmitButton buttonText={'Send Message'} onClick={() => props.setShowContactModal(true)}/>
             </form>
         </div>
+
+        <ContactModal setShowContactModal={props.setShowContactModal} showContactModal={props.showContactModal}/>
         </section>
     )
 }

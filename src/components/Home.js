@@ -20,8 +20,10 @@ export default function Home(props) {
     const [inputValueWingSize, setInputValueWingSize] = useState(""); // state for value in input box
     const [inputValueWindSpeed, setInputValueWindSpeed] = useState(""); // state for value in input box
     const [heatmapData, setHeatmapData] = useState(generateData(userWeight, userSpeed, userWing)); // state for heatmap data
-    const [showErrorModalModal, setShowErrorModalModal] = useState(false); // state for error popup
+    const [showErrorModalModal, setShowErrorModalModal] = useState(false);
     const [showInformationModal, setShowInformationModal] = useState(false);
+    const [showInformationModalAdvanced, setShowInformationModalAdvanced] = useState(false);
+    const [showContactModal, setShowContactModal] = useState(false);
     
     // Regex function to validate if the input is a valid integer
     function isNumeric(value) {
@@ -86,6 +88,8 @@ export default function Home(props) {
                     setShowErrorModalModal={setShowErrorModalModal}
                     showInformationModal={showInformationModal}
                     setShowInformationModal={setShowInformationModal}
+                    showContactModal={showContactModal}
+                    setShowContactModal={setShowContactModal}
                     handleInputChange={handleInputChange}
                     handleSubmit={handleSubmit}
                     advancedData={props.advancedToggle}
@@ -102,8 +106,10 @@ export default function Home(props) {
                     setHeatmapData={setHeatmapData}
                     showErrorModalModal={showErrorModalModal}
                     setShowErrorModalModal={setShowErrorModalModal}
-                    showInformationModal={showInformationModal}
-                    setShowInformationModal={setShowInformationModal}
+                    showInformationModal={showInformationModalAdvanced}
+                    setShowInformationModal={setShowInformationModalAdvanced}
+                    showContactModal={showContactModal}
+                    setShowContactModal={setShowContactModal}
                     handleInputChangeWingSize={handleInputChangeWingSize}
                     handleInputChangeWindSpeed={handleInputChangeWindSpeed}
                     handleSubmit={handleSubmitAdvanced}

@@ -34,8 +34,8 @@ export default function AdvancedUser(props) {
             <div className="UserSection flex item-center mt-6 mb-0">
 
                 <ErrorModalAdvanced 
-                    showErrorModalModal={props.showErrorModalModal}
-                    setShowErrorModalModal={props.setShowErrorModalModal} 
+                    showErrorModal={props.showErrorModal}
+                    setShowErrorModal={props.setShowErrorModal} 
                 />
 
                 <InformationModalAdvanced
