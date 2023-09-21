@@ -1,34 +1,44 @@
 import React, { useState } from "react";
 import '../App.css';
 import { generateData } from "../data";
-import Heatmap from "./Heatmap";
-import SubmitButton from './SubmitButton';
-import ErrorModal from "./ErrorModal";
-// import GraphHeader from "./GraphHeader";
-import ApexHeatmap from "./ApexHeatmap";
-import { TEInput } from "tw-elements-react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import InformationModal from "./InformationModal";
+import AdvancedUser from "./AdvancedUser";
+import NormalUser from "./NormalUser";
 
-
-export default function Home() {
-    const heatmapPlottingLibrary = 'apex';
+export default function Home(props) {
+    // Constants 
     const defaultWeightStart = 180;
+    const defualtWingSize = 5;
+    const defaultWindSpeed = 17;
+
+    // User Variables 
+    const [userWing, setUserWing] = useState(defualtWingSize)
+    const [userSpeed, setUserSpeed] = useState(defaultWindSpeed)
     const [userWeight, setUserWeight] = useState(defaultWeightStart); // state for user weight
+
+    // Input and Updaters
     const [inputValue, setInputValue] = useState(""); // state for value in input box
-    const [heatmapData, setHeatmapData] = useState(generateData(userWeight, heatmapPlottingLibrary)); // state for heatmap data
+    const [inputValueWingSize, setInputValueWingSize] = useState(""); // state for value in input box
+    const [inputValueWindSpeed, setInputValueWindSpeed] = useState(""); // state for value in input box
+    const [heatmapData, setHeatmapData] = useState(generateData(userWeight, userSpeed, userWing)); // state for heatmap data
     const [showErrorModalModal, setShowErrorModalModal] = useState(false); // state for error popup
     const [showInformationModal, setShowInformationModal] = useState(false);
-
+    
     // Regex function to validate if the input is a valid integer
     function isNumeric(value) {
-      return /^-?\d+$/.test(value);
+        return /^-?\d+(\.\d+)?$/.test(value);
     }
   
     // Function to handle TEInput change
     const handleInputChange = (event) => {
       setInputValue(event.target.value);
+    };
+
+    const handleInputChangeWingSize = (event) => {
+      setInputValueWingSize(event.target.value);
+    };
+
+    const handleInputChangeWindSpeed = (event) => {
+      setInputValueWindSpeed(event.target.value);
     };
   
     // Function to handle submit button click
@@ -40,63 +50,72 @@ export default function Home() {
         setUserWeight(newWeight);
   
         // Update heatmapData with the new userWeight
-        setHeatmapData(generateData(newWeight, heatmapPlottingLibrary));
+        setHeatmapData(generateData(newWeight, userSpeed, userWing));
       } else {
         setShowErrorModalModal(true)}
     };
 
+    const handleSubmitAdvanced = () => {
+        if (isNumeric(inputValueWingSize) && isNumeric(inputValueWindSpeed)) {
+            const newWingSize = parseInt(inputValueWingSize, 10);
+            const newWindSpeed = parseInt(inputValueWindSpeed, 10);
+
+            // Update userWingSize and userWindSpeed in state
+            setUserWing(newWingSize);
+            setUserSpeed(newWindSpeed);
+
+            // Update heatmapData with the new userWingSize and userWindSpeed
+            setHeatmapData(generateData(userWeight, newWindSpeed, newWingSize));
+        } else {
+            setShowErrorModalModal(true);
+        }
+    };
+
     return (
         <div className="App">
-            <div>
-                <div className="flex item-center">
-                    <div className="">
-                        <div className="text-center">
-                            <h1 className="text-gray-900 font-bold text-5xl md:text-6xl xl:text-7xl">Find the perfect <span className="text-primary dark:text-white">wing size.</span></h1>
-                            <p className="mt-0 mb-6 inline-block font-light text-center text-gray-500 text-lg">Enter your weight below and find your ideal conditions for wing foiling.</p>
-                            <button 
-                                className="info-button inline-block ml-2"
-                                type="button"
-                                onClick={() => setShowInformationModal(true)}
-                            >
-                                <FontAwesomeIcon icon={faInfoCircle} />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="UserSection flex item-center mt-6 mb-0">
-                <TEInput
-                    type="text"
-                    id="exampleFormControlInput1"
-                    label="Enter Weight (lbs)"
-                    className="text-black"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                />
-
-                <ErrorModal 
+            <div className="App">
+                {props.advancedToggle ? (
+                <NormalUser
+                    userWeight={userWeight}
+                    setUserWeight={setUserWeight}
+                    inputValue={inputValue}
+                    setInputValue={setInputValue}
+                    heatmapData={heatmapData}
+                    setHeatmapData={setHeatmapData}
                     showErrorModalModal={showErrorModalModal}
-                    setShowErrorModalModal={setShowErrorModalModal} 
-                />
-
-                <InformationModal
+                    setShowErrorModalModal={setShowErrorModalModal}
                     showInformationModal={showInformationModal}
                     setShowInformationModal={setShowInformationModal}
+                    handleInputChange={handleInputChange}
+                    handleSubmit={handleSubmit}
+                    advancedData={props.advancedToggle}
                 />
-
-                <SubmitButton 
-                    onClick={handleSubmit}
-                    buttonText={'Submit'}
+                ) : (
+                <AdvancedUser 
+                    userWeight={userWeight}
+                    setUserWeight={setUserWeight}
+                    inputValueWingSize={inputValueWingSize}
+                    setInputValueWingSize={setInputValueWingSize}
+                    inputValueWindSpeed={inputValueWindSpeed}
+                    setInputValueWindSpeed={setInputValueWindSpeed}
+                    heatmapData={heatmapData}
+                    setHeatmapData={setHeatmapData}
+                    showErrorModalModal={showErrorModalModal}
+                    setShowErrorModalModal={setShowErrorModalModal}
+                    showInformationModal={showInformationModal}
+                    setShowInformationModal={setShowInformationModal}
+                    handleInputChangeWingSize={handleInputChangeWingSize}
+                    handleInputChangeWindSpeed={handleInputChangeWindSpeed}
+                    handleSubmit={handleSubmitAdvanced}
+                    userSpeed={userSpeed}
+                    userWing={userWing}
+                    setUserSpeed={setUserSpeed}
+                    setUserWing={setUserWing}
+                    advancedData={props.advancedToggle}
                 />
-
+                )}
             </div>
-
-            {heatmapPlottingLibrary === 'd3' ? (
-                <Heatmap data={heatmapData} width={900} height={600} />
-            ) : (
-                <ApexHeatmap data={heatmapData} />
-            )}
         </div>
-    )
+    );
+
 }

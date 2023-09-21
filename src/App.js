@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from "./components/Home";
@@ -10,13 +10,21 @@ import { Route, Routes } from 'react-router-dom';
 // https://tailwind-elements.com/docs/react/components/modal/
 
 function App() {
+  const [advancedToggle, setAdvancedToggle] = useState(true);
+
+   // Function to handle toggle click
+  const handleToggle = () => {
+      setAdvancedToggle(!advancedToggle);
+      console.log(advancedToggle)
+  };
+
 
   return (
     <div>
-      <Navbar />
+      <Navbar toggleState={advancedToggle} handleToggle={handleToggle}/>
       <div className="App">
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home advancedToggle={advancedToggle}/>} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
       </Routes>

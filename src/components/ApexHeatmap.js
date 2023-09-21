@@ -4,7 +4,7 @@ import ReactApexChart from "react-apexcharts";
 export default function ApexHeatmap(props) {
     const xData = props.data.wingSize;
     const yData = props.data.windSpeed;
-    const zData = props.data.values;
+    const zData = props.advancedData ? props.data.valuesAdvanced : props.data.values;    
 
     function convertListValuesToString(list) {
         return list.map(String);

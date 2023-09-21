@@ -39,10 +39,13 @@ export default function About() {
                     <h5
                         class="text-xl font-semibold text-gray-700  transition group-hover:text-primary"
                     >
-                        1. Enter your weight
+                        1. Enter your data
                     </h5>
                     <p class="leading-7 font-light text-gray-500 text-lg">
                         Input your weight in the designated input box and the app will get to work...
+                    </p>
+                    <p class="leading-7 font-light text-gray-500 text-lg">
+                        <em>Note: Experienced wing foilers can toggle the advanced slider at the top. Instead of user weight, input a known wing size and wind speed where you are perfectly powered up.</em>
                     </p>
                     </div>
                 </div>
