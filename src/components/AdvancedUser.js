@@ -2,7 +2,7 @@ import React from "react";
 import '../App.css';
 import SubmitButton from './SubmitButton';
 import ErrorModalAdvanced from "./ErrorModalAdvanced";
-import ApexHeatmap from "./ApexHeatmap";
+import ApexHeatmapAdvanced from "./ApexHeatmapAdvanced";
 import { TEInput } from "tw-elements-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
@@ -66,7 +66,7 @@ export default function AdvancedUser(props) {
                         buttonText={'Submit'}
                     />
             </div>
-            <ApexHeatmap data={props.heatmapData} advancedData={true} />
+            <ApexHeatmapAdvanced data={props.heatmapData} advancedData={true} />
         </div>
     )
 }
