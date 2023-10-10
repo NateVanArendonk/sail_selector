@@ -40,7 +40,7 @@ export default function ContactModal(props) {
             </TEModalHeader>
             <TEModalBody>
               <p className="mb-4 font-light text-gray-500 text-md">
-                    Stop sending messages and go winging!
+                    Go talk with your local kite shop!
               </p>
             </TEModalBody>
             <TEModalFooter>
