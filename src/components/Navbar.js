@@ -16,10 +16,6 @@ export default function Navbar(props) {
         navigate('/');
     };
 
-    const navigateToContact = () => {
-        navigate('/contact');
-    };
-
     return (
         <nav className="flex items-center justify-between flex-wrap bg-primary p-4">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -62,16 +58,7 @@ export default function Navbar(props) {
                         >
                         About
                     </button>
-                </TERipple>
-                <TERipple>
-                    <button
-                        type="submit"
-                        className="inline-block mx-2 rounded border-2 border-secondary px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-white transition duration-100 ease-in-out hover:border-secondary-600 hover:bg-secondary-500 hover:bg-opacity-10 hover:text-white focus:border-secondary-600 focus:text-white-600 focus:outline-none focus:ring-0 active:border-secondary-700 active:text-white-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-                        onClick={navigateToContact}
-                        >
-                        Contact
-                    </button>
-                </TERipple>                  
+                </TERipple>             
             </div>
         </nav>
     )

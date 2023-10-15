@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from "./components/Home";
 import About from "./components/About";
-import Contact from "./components/Contact";
+// import Contact from "./components/ContactDeprecated";
 import { Route, Routes } from 'react-router-dom';
 
 // component UI library 
@@ -27,7 +27,6 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home advancedToggle={advancedToggle}/>} />
         <Route exact path="/about" element={<About />} />
-        <Route exact path="/contact" element={<Contact showContactModal={showContactModal} setShowContactModal={setShowContactModal}/>} />
       </Routes>
       </div>
     </div>
@@ -35,3 +34,6 @@ function App() {
 };
 
 export default App;
+
+// Route for contact page that is deprecated
+// <Route exact path="/contact" element={<Contact showContactModal={showContactModal} setShowContactModal={setShowContactModal}/>} />

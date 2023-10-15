@@ -2,7 +2,7 @@ import React from "react";
 import SubmitButton from "./SubmitButton";
 import ContactModal from "./ContactModal";
 
-export default function Contact(props) {
+export default function ContactDeprecated(props) {
     return (
         <section class="bg-white">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
