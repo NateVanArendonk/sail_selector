@@ -11,7 +11,7 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [advancedToggle, setAdvancedToggle] = useState(true);
-  const [showContactModal, setShowContactModal] = useState(false);
+  // const [showContactModal, setShowContactModal] = useState(false);
 
    // Function to handle toggle click
   const handleToggle = () => {
