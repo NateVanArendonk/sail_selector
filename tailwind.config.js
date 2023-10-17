@@ -6,7 +6,14 @@ module.exports = {
     "./node_modules/tw-elements-react/dist/js/**/*.js"
 ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '320px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+      },
+    },
   },
   plugins: [require("tw-elements-react/dist/plugin.cjs")],
 }

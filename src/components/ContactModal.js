@@ -39,9 +39,9 @@ export default function ContactModal(props) {
               </button>
             </TEModalHeader>
             <TEModalBody>
-              <p className="mb-4 font-light text-gray-500 text-md">
+              <div className="mb-4 font-light text-gray-500 text-md">
                     Go talk with your local kite shop!
-              </p>
+              </div>
             </TEModalBody>
             <TEModalFooter>
               <TERipple rippleColor="light">

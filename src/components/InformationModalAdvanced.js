@@ -39,31 +39,31 @@ export default function InformationModalAdvanced(props) {
               </button>
             </TEModalHeader>
             <TEModalBody>
-              <p className="mb-4 font-light text-gray-500 text-md">
+              <div className="mb-4 font-light text-gray-500 text-md">
                     Enter your preferred wing size and wind speed when you are fully powered and we will show all of your ideal conditions for wing foiling. 
                     Using our proprietary algorithm, we can help you optimize your quiver and find the best times to head out on the water.
 
                 <h6 className="mb-4 mt-4 text-md leading-tight text-primary flex items-center">
                     <div className="w-4 h-4 bg-primary rounded-sm mr-2"></div>
-                    <p className="leading-7 font-light text-gray-800 text-sm"> These are your ideal winging conditions - High Fun Factor!</p>
+                    <div className="leading-7 font-light text-gray-800 text-sm"> These are your ideal winging conditions - High Fun Factor!</div>
                 </h6>
 
                 <h6 className="mb-4 mt-0 text-md leading-tight text-info flex items-center">
                     <div className="w-4 h-4 bg-warning rounded-sm mr-2"></div>
-                    <p className="leading-7 font-light text-gray-800 text-sm"> These conditions can get dangerous - Variable Fun Factor</p>
+                    <div className="leading-7 font-light text-gray-800 text-sm"> These conditions can get dangerous - Variable Fun Factor</div>
                 </h6>
 
                 <h6 className="mb-4 mt-0 text-md leading-tight text-info flex items-center">
                     <div className="w-4 h-4 bg-info rounded-sm mr-2"></div>
-                    <p className="leading-7 font-light text-gray-800 text-sm"> These conditions will require a bit more work - Variable Fun Factor</p>
+                    <div className="leading-7 font-light text-gray-800 text-sm"> These conditions will require a bit more work - Variable Fun Factor</div>
                 </h6>
 
                 <h6 className="mt-0 text-md leading-tight text-[#b0b7b8] flex items-center">
                     <div className="w-4 h-4 bg-[#b0b7b8] rounded-sm mr-2"></div>
-                    <p className="leading-7 font-light text-gray-800 text-sm"> We do not recommend winging in these conditions - Low Fun Factor</p>
+                    <div className="leading-7 font-light text-gray-800 text-sm"> We do not recommend winging in these conditions - Low Fun Factor</div>
                 </h6>
 
-              </p>
+              </div>
             </TEModalBody>
             <TEModalFooter>
               <TERipple rippleColor="light">

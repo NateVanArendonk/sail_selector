@@ -41,7 +41,7 @@ export default function ErrorModalAdvanced(props) {
             </TEModalHeader>
 
             <TEModalBody>
-              <p className="text-gray-700 text-sm">Oops! Looks like what you entered is not a valid wing size or wind speed. Make sure you just enter the vlaues as digits - there is no need to add units e.g. "meters" or "mph".</p>
+              <div className="text-gray-700 text-sm">Oops! Looks like what you entered is not a valid wing size or wind speed. Make sure you just enter the vlaues as digits - there is no need to add units e.g. "meters" or "mph".</div>
             </TEModalBody>
 
             <TEModalFooter>

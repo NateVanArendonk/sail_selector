@@ -41,7 +41,7 @@ export default function ErrorModal(props) {
             </TEModalHeader>
 
             <TEModalBody>
-              <p className="text-gray-700 text-sm">Oops! Looks like what you entered is not a valid weight. Make sure you just enter your weight as digits - there is no need to add units e.g. "pounds" or "lbs".</p>
+              <div className="text-gray-700 text-sm">Oops! Looks like what you entered is not a valid weight. Make sure you just enter your weight as digits - there is no need to add units e.g. "pounds" or "lbs".</div>
             </TEModalBody>
 
             <TEModalFooter>

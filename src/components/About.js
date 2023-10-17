@@ -17,7 +17,7 @@ export default function About() {
 
                 <div>
                     <h2 className="text-4xl font-semibold mb-2">What is Sail Selector?</h2>
-                    <p className="mb-6 leading-7 font-light text-gray-500 text-lg">Sail Selector is your ultimate wing selection companion for wing foiling. It removes the guesswork from selecting the perfect wing for your next session.</p>
+                    <div className="mb-6 leading-7 font-light text-gray-500 text-lg">Sail Selector is your ultimate wing selection companion for wing foiling. It removes the guesswork from selecting the perfect wing for your next session.</div>
                 </div>
 
             </div>
@@ -41,12 +41,12 @@ export default function About() {
                     >
                         1. Enter your data
                     </h5>
-                    <p class="leading-7 font-light text-gray-500 text-lg">
+                    <div class="leading-7 font-light text-gray-500 text-lg">
                         Input your weight in the designated input box and the app will get to work...
-                    </p>
-                    <p class="leading-7 font-light text-gray-500 text-lg">
+                    </div>
+                    <div class="leading-7 font-light text-gray-500 text-lg">
                         <em>Note: Experienced wing foilers can toggle the advanced slider at the top. Instead of user weight, input a known wing size and wind speed where you are perfectly powered up.</em>
-                    </p>
+                    </div>
                     </div>
                 </div>
                 </div>
@@ -65,25 +65,25 @@ export default function About() {
                     >
                         2. Wind speed magic
                     </h5>
-                    <p class="leading-7 font-light text-gray-500 text-lg">
+                    <div class="leading-7 font-light text-gray-500 text-lg">
                         Our proprietary algorithm works its magic and creates a color-coded map for your ideal wing foiling settings. Colors correspond with:
                         <div className="flex items-center mt-4">
                             <div className="w-4 h-4 bg-primary rounded-sm mr-2"></div>
-                            <p className="leading-7 font-light text-gray-500 text-xs">Ideal Conditions - High Fun Factor</p>
+                            <div className="leading-7 font-light text-gray-500 text-xs">Ideal Conditions - High Fun Factor</div>
                         </div>
                         <div className="flex items-center mt-2">
                             <div className="w-4 h-4 bg-warning rounded-sm mr-2"></div>
-                            <p className="leading-7 font-light text-gray-500 text-xs">Overpowered Conditions - Can get dangerous (or fun!)</p>
+                            <div className="leading-7 font-light text-gray-500 text-xs">Overpowered Conditions - Can get dangerous (or fun!)</div>
                         </div>
                         <div className="flex items-center mt-2">
                             <div className="w-4 h-4 bg-info rounded-sm mr-2"></div>
-                            <p className="leading-7 font-light text-gray-500 text-xs">Underpowered Conditions - Requires lots of effort</p>
+                            <div className="leading-7 font-light text-gray-500 text-xs">Underpowered Conditions - Requires lots of effort</div>
                         </div>
                         <div className="flex items-center mt-2">
                             <div className="w-4 h-4 bg-[#b0b7b8] rounded-sm mr-2"></div>
-                            <p className="leading-7 font-light text-gray-500 text-xs">Difficult Conditions - Low Fun Factor</p>
+                            <div className="leading-7 font-light text-gray-500 text-xs">Difficult Conditions - Low Fun Factor</div>
                         </div>
-                    </p>
+                    </div>
                     </div>
                 </div>
                 </div>
@@ -102,9 +102,9 @@ export default function About() {
                     >
                         3. Optimize your sessions
                     </h5>
-                    <p class="leading-7 font-light text-gray-500 text-lg">
+                    <div class="leading-7 font-light text-gray-500 text-lg">
                         Utilize Sail Selector to build your quiver and confidently choose the perfect wing for any wind condition.
-                    </p>
+                    </div>
                     </div>
                     <button
                     type="button"
@@ -132,7 +132,7 @@ export default function About() {
             <div className="group relative bg-white shadow-md transition hover:z-[1] hover:bg-gray-100 hover:shadow-2xl hover:shadow-gray-600/10 hover:scale-105 p-8 rounded-lg mt-8 border border-gray-200">
             <div className="space-y-2">
                 <h3 className="text-xl font-semibold text-gray-700 transition group-hover:text-primary">No More Uncertainty</h3>
-                <p className="eading-7 font-light text-gray-500 text-lg">Sail Selector builds confidence in your wing selection process and makes choosing the perfect wing size a breeze.</p>
+                <div className="eading-7 font-light text-gray-500 text-lg">Sail Selector builds confidence in your wing selection process and makes choosing the perfect wing size a breeze.</div>
             </div>
             </div>
         </main>

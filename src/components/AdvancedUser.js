@@ -17,8 +17,12 @@ export default function AdvancedUser(props) {
                 <div className="flex item-center">
                     <div className="">
                         <div className="text-center">
-                            <h1 className="text-gray-900 font-bold text-5xl md:text-6xl xl:text-7xl">Find the perfect <span className="text-primary dark:text-white">wing size.</span></h1>
-                            <p className="mt-0 mb-6 inline-block font-light text-center text-gray-500 text-lg">Enter your preferred wing size and wind speed where you are fully powered. We will take care of the rest.</p>
+                            <h1 className="text-3xl sm:text-5xl text-gray-900 font-bold mb-2 sm:mb-0">
+                                Find the perfect <span className="text-primary">wing size.</span>
+                            </h1>
+                            <div className="mb-2 mx-4 inline-block font-light text-center text-gray-500 text-sm mb-2 sm:mb-4">
+                                Enter your preferred wing size and wind speed where you are fully powered. We will take care of the rest.
+                            </div>
                             <button 
                                 className="info-button inline-block ml-2"
                                 type="button"
@@ -31,7 +35,8 @@ export default function AdvancedUser(props) {
                 </div>
             </div>
 
-            <div className="UserSection flex item-center mt-6 mb-0">
+            <div className="UserSection flex flex-col sm:flex-row items-center mt-2 mx-4 mb-0">
+
 
                 <ErrorModalAdvanced 
                     showErrorModal={props.showErrorModal}
@@ -48,7 +53,7 @@ export default function AdvancedUser(props) {
                         type="text"
                         id="wingSizeInput"
                         label="Enter Wing Size (meters)"
-                        className="text-black"
+                        className="text-black mb-2 sm:mb-0"
                         value={props.inputValueWingSize}
                         onChange={props.handleInputChangeWingSize}
                     />
@@ -57,7 +62,7 @@ export default function AdvancedUser(props) {
                         type="text"
                         id="windSpeedInput"
                         label="Enter Wind Speed (mph)"
-                        className="text-black"
+                        className="text-black mb-2 sm:mb-0"
                         value={props.inputValueWindSpeed}
                         onChange={props.handleInputChangeWindSpeed}
                     />

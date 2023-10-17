@@ -7,7 +7,7 @@ export default function ContactDeprecated(props) {
         <section class="bg-white">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
             <h2 class="mb-4 text-5xl tracking-tight font-bold text-center text-gray-900">Contact Us</h2>
-            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">Got a technical issue? Want to send feedback about a feature? Need details about how to use the recommendations? Let us know.</p>
+            <div class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">Got a technical issue? Want to send feedback about a feature? Need details about how to use the recommendations? Let us know.</div>
             <form action="#" class="space-y-8">
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
