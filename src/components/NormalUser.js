@@ -4,8 +4,8 @@ import SubmitButton from './SubmitButton';
 import ErrorModal from "./ErrorModal";
 import ApexHeatmap from "./ApexHeatmap";
 import { TEInput } from "tw-elements-react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import InformationModal from "./InformationModal";
 
 
@@ -14,18 +14,13 @@ export default function NormalUser(props) {
         <div className="App">
             <div>
                 <div className="flex item-center">
-                    <div className="">
-                        <div className="text-center">
-                            <h1 className="text-gray-900 font-bold text-5xl md:text-6xl xl:text-7xl">Find the perfect <span className="text-primary dark:text-white">wing size.</span></h1>
-                            <p className="mt-0 mb-6 inline-block font-light text-center text-gray-500 text-lg">Enter your weight below and find your ideal conditions for wing foiling.</p>
-                            <button 
-                                className="info-button inline-block ml-2"
-                                type="button"
-                                onClick={() => props.setShowInformationModal(true)}
-                            >
-                                <FontAwesomeIcon icon={faInfoCircle} />
-                            </button>
-                        </div>
+                    <div className="text-center">
+                        <h1 className="text-gray-900 font-bold text-xl">
+                            Find the perfect <span className="text-primary dark:text-white">wing size.</span>
+                        </h1>
+                        <p className="mt-0 mb-6 inline-block font-light text-center text-gray-500 text-sm md:text-lg">
+                            Enter your weight below and find your ideal conditions for wing foiling.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -56,7 +51,12 @@ export default function NormalUser(props) {
                 />
 
             </div>
-            <ApexHeatmap data={props.heatmapData} advancedData={false} />
+            <ApexHeatmap 
+                data={props.heatmapData}
+                advancedData={false}
+                windowWidth={props.windowWidth}
+                windowHeight={props.windowHeight}
+            />
         </div>
     )
 }

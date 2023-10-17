@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../App.css';
 import { generateData } from "../data";
 import AdvancedUser from "./AdvancedUser";
@@ -73,6 +73,31 @@ export default function Home(props) {
         }
     };
 
+    const [windowDimensions, setWindowDimensions] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+
+    useEffect(() => {
+        // Update dimensions when the window is resized
+        const handleResize = () => {
+        setWindowDimensions({
+            width: window.innerWidth,
+            height: window.innerHeight,
+        });
+        };
+
+        // Attach the event listener
+        window.addEventListener('resize', handleResize);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []); // Empty dependency array ensures the effect runs only once
+
+
+
     return (
         <div className="App">
             <div className="App">
@@ -93,6 +118,8 @@ export default function Home(props) {
                     handleInputChange={handleInputChange}
                     handleSubmit={handleSubmit}
                     advancedData={props.advancedToggle}
+                    windowWidth={windowDimensions.width}
+                    windowHeight={windowDimensions.height}
                 />
                 ) : (
                 <AdvancedUser 
@@ -118,6 +145,8 @@ export default function Home(props) {
                     setUserSpeed={setUserSpeed}
                     setUserWing={setUserWing}
                     advancedData={props.advancedToggle}
+                    windowWidth={windowDimensions.width}
+                    windowHeight={windowDimensions.height}
                 />
                 )}
             </div>

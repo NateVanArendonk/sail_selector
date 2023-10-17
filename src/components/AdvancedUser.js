@@ -66,7 +66,12 @@ export default function AdvancedUser(props) {
                         buttonText={'Submit'}
                     />
             </div>
-            <ApexHeatmapAdvanced data={props.heatmapData} advancedData={true} />
+            <ApexHeatmapAdvanced
+                data={props.heatmapData}
+                advancedData={true}
+                windowWidth={props.windowWidth}
+                windowHeight={props.windowHeight}
+            />
         </div>
     )
 }
