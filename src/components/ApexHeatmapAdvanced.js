@@ -39,7 +39,7 @@ export default function ApexHeatmapAdvanced(props) {
                 categories: convertListValuesToString(xData), // Set x-axis labels here
                 labels: {
                     style: {
-                        fontSize: '12px', // You can customize label font size and other styles
+                        fontSize: '16px', // You can customize label font size and other styles
                         fontFamily: 'sans-serif',
                     },
                 },
@@ -53,7 +53,7 @@ export default function ApexHeatmapAdvanced(props) {
             yaxis: {
                 labels: {
                     style: {
-                        fontSize: '12px',
+                        fontSize: '16px',
                         fontFamily: 'sans-serif',
                     },
                 },
@@ -113,7 +113,7 @@ export default function ApexHeatmapAdvanced(props) {
                 inverseOrder: false,
                 theme: 'light',
                 style: {
-                    fontSize: '12px',
+                    fontSize: '16px',
                     fontFamily: "sans-serif",
                     background: 'white',
                     border: '1px solid #ccc',
@@ -133,16 +133,16 @@ export default function ApexHeatmapAdvanced(props) {
                     formatter: function(val, { seriesIndex, dataPointIndex, w }) {
                         const seriesName = w.config.series[seriesIndex].name;
                         let toolTipText = ''
-                        if (val >= 0 && val < 0.5) {
-                            toolTipText = "Bad Winging Conditions";
-                        } else if (val >= 0.5 && val < 0.75) {
-                            toolTipText = "Underpowered Winging Conditions";
-                        } else if (val >= 0.75 && val < 1.35) {
-                            toolTipText = "Ideal Winging Conditions";
-                        } else if (val >= 1.35 && val < 1.8) {
-                            toolTipText = "Overpowered Winging Conditions";
+                        if (val >= 0 && val < 0.8) {
+                            toolTipText = props.tooltipValues[0];
+                        } else if (val >= 0.8 && val < 0.9) {
+                            toolTipText = props.tooltipValues[3];
+                        } else if (val >= 0.9 && val < 1.5) {
+                            toolTipText = props.tooltipValues[1];
+                        } else if (val >= 1.5 && val < 2.0) {
+                            toolTipText = props.tooltipValues[2];
                         } else {
-                            toolTipText = "Bad Winging Conditions";
+                            toolTipText = props.tooltipValues[0];
                         }
                         return `${seriesName} mph: ${toolTipText}`;
                     },

@@ -76,6 +76,7 @@ export default function AdvancedUser(props) {
                 advancedData={true}
                 windowWidth={props.windowWidth}
                 windowHeight={props.windowHeight}
+                tooltipValues={props.tooltipValues}
             />
         </div>
     )

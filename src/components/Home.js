@@ -24,7 +24,17 @@ export default function Home(props) {
     const [showInformationModal, setShowInformationModal] = useState(false);
     const [showInformationModalAdvanced, setShowInformationModalAdvanced] = useState(false);
     const [showContactModal, setShowContactModal] = useState(false);
-    
+    const [windowDimensions, setWindowDimensions] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+    const [tooltipText, setTooltipText] = useState([
+            "Bad Winging Conditions",
+            "Ideal Winging Conditions",
+            "Overpowered Winging Conditions",
+            "Underpowered Winging Conditions"
+    ])
+
     // Regex function to validate if the input is a valid integer
     function isNumeric(value) {
         return /^-?\d+(\.\d+)?$/.test(value);
@@ -73,18 +83,26 @@ export default function Home(props) {
         }
     };
 
-    const [windowDimensions, setWindowDimensions] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-    });
-
     useEffect(() => {
         // Update dimensions when the window is resized
         const handleResize = () => {
-        setWindowDimensions({
-            width: window.innerWidth,
-            height: window.innerHeight,
-        });
+
+            const newWidth = window.innerWidth;
+            if (newWidth < 640) {
+                setTooltipText(["Bad", "Ideal", "Overpowered", "Underpowered"]);
+            } else {
+                setTooltipText([
+                "Bad Winging Conditions",
+                "Ideal Winging Conditions",
+                "Overpowered Winging Conditions",
+                "Underpowered Winging Conditions"
+                ]);
+            }
+
+            setWindowDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
         };
 
         // Attach the event listener
@@ -96,7 +114,7 @@ export default function Home(props) {
         };
     }, []); // Empty dependency array ensures the effect runs only once
 
-
+    console.log(tooltipText)
 
     return (
         <div className="App">
@@ -120,6 +138,7 @@ export default function Home(props) {
                     advancedData={props.advancedToggle}
                     windowWidth={windowDimensions.width}
                     windowHeight={windowDimensions.height}
+                    tooltipValues={tooltipText}
                 />
                 ) : (
                 <AdvancedUser 
@@ -147,6 +166,7 @@ export default function Home(props) {
                     advancedData={props.advancedToggle}
                     windowWidth={windowDimensions.width}
                     windowHeight={windowDimensions.height}
+                    tooltipValues={tooltipText}
                 />
                 )}
             </div>

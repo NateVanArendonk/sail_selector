@@ -18,11 +18,11 @@ export default function NormalUser(props) {
                         <h1 className="text-3xl sm:text-5xl text-gray-900 font-bold mb-2 sm:mb-0">
                             Find the perfect <span className="text-primary">wing size.</span>
                         </h1>
-                        <div className="mb-2 mx-4 inline-block font-light text-center text-gray-500 text-sm mb-2 sm:mb-4">
+                        <div className="mx-4 inline-block font-light text-center text-gray-500 text-base mb-2 sm:mb-4">
                             Enter your weight below and find your ideal conditions for wing foiling.
                         </div>
                         <button 
-                            className="info-button inline-block ml-2"
+                            className="info-button inline-block"
                             type="button"
                             onClick={() => props.setShowInformationModal(true)}
                         >
@@ -63,6 +63,7 @@ export default function NormalUser(props) {
                 advancedData={false}
                 windowWidth={props.windowWidth}
                 windowHeight={props.windowHeight}
+                tooltipValues={props.tooltipValues}
             />
         </div>
     )
