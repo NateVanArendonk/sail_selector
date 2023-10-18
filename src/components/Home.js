@@ -4,6 +4,11 @@ import { generateData } from "../data";
 import AdvancedUser from "./AdvancedUser";
 import NormalUser from "./NormalUser";
 
+
+// smaller than 640
+// 641 - 1007
+// 1008 and up
+
 export default function Home(props) {
     // Constants 
     const defaultWeightStart = 180;
