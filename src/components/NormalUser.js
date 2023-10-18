@@ -21,13 +21,6 @@ export default function NormalUser(props) {
                         <div className="mx-4 inline-block font-light text-center text-gray-500 text-base mb-2 sm:mb-4">
                             Enter your weight below and find your ideal conditions for wing foiling.
                         </div>
-                        <button 
-                            className="info-button inline-block"
-                            type="button"
-                            onClick={() => props.setShowInformationModal(true)}
-                        >
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                        </button>
                     </div>
                 </div>
             </div>
@@ -51,11 +44,20 @@ export default function NormalUser(props) {
                     showInformationModal={props.showInformationModal}
                     setShowInformationModal={props.setShowInformationModal}
                 />
+                <div className="flex items-center">
+                    <SubmitButton
+                        onClick={props.handleSubmit}
+                        buttonText={'Submit'}
+                    />
 
-                <SubmitButton
-                    onClick={props.handleSubmit}
-                    buttonText={'Submit'}
-                />
+                    <button 
+                        className="info-button inline-block"
+                        type="button"
+                        onClick={() => props.setShowInformationModal(true)}
+                    >
+                        <FontAwesomeIcon icon={faInfoCircle} />
+                    </button>
+                </div>
 
             </div>
             <ApexHeatmap 

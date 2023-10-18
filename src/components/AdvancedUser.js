@@ -23,13 +23,6 @@ export default function AdvancedUser(props) {
                             <div className="mb-2 mx-4 inline-block font-light text-center text-gray-500 text-sm mb-2 sm:mb-4">
                                 Enter your preferred wing size and wind speed where you are fully powered. We will take care of the rest.
                             </div>
-                            <button 
-                                className="info-button inline-block ml-2"
-                                type="button"
-                                onClick={() => props.setShowInformationModal(true)}
-                            >
-                                <FontAwesomeIcon icon={faInfoCircle} />
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -66,10 +59,20 @@ export default function AdvancedUser(props) {
                         value={props.inputValueWindSpeed}
                         onChange={props.handleInputChangeWindSpeed}
                     />
-                    <SubmitButton 
+                <div className="flex items-center">
+                    <SubmitButton
                         onClick={props.handleSubmit}
                         buttonText={'Submit'}
                     />
+
+                    <button 
+                        className="info-button inline-block"
+                        type="button"
+                        onClick={() => props.setShowInformationModal(true)}
+                    >
+                        <FontAwesomeIcon icon={faInfoCircle} />
+                    </button>
+                </div>
             </div>
             <ApexHeatmapAdvanced
                 data={props.heatmapData}
