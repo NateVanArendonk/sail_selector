@@ -15,9 +15,9 @@ export default function NormalUser(props) {
             <div>
                 <div className="flex item-center">
                     <div className="text-center">
-                        <h1 className="text-3xl sm:text-5xl text-gray-900 font-bold mb-2 sm:mb-0">
+                        <div className="text-4xl mt-12 text-gray-900 font-bold mb-2 sm:mb-0 sm:text-5xl">
                             Find the perfect <span className="text-primary">wing size.</span>
-                        </h1>
+                        </div>
                         <div className="mx-4 inline-block font-light text-center text-gray-500 text-base mb-2 sm:mb-4">
                             Enter your weight below and find your ideal conditions for wing foiling.
                         </div>
@@ -30,7 +30,7 @@ export default function NormalUser(props) {
                     type="text"
                     id="exampleFormControlInput1"
                     label="Enter Weight (lbs)"
-                    className="text-black mb-2 sm:mb-0"
+                    className="text-black mb-4 sm:mb-0"
                     value={props.inputValue}
                     onChange={props.handleInputChange}
                 />
