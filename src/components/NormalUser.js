@@ -15,10 +15,10 @@ export default function NormalUser(props) {
             <div>
                 <div className="flex item-center">
                     <div className="text-center">
-                        <div className="text-4xl mt-12 text-gray-900 font-bold mb-2 sm:mb-0 sm:text-5xl">
-                            Find the perfect <span className="text-primary">wing size.</span>
+                        <div className="text-4xl mt-12 text-primary-color font-bold mb-2 sm:mb-0 sm:text-5xl">
+                            Find the perfect <span className="text-second-color">wing size.</span>
                         </div>
-                        <div className="mx-4 inline-block font-light text-center text-gray-500 text-base mb-2 sm:mb-4">
+                        <div className="mx-4 inline-block font-light text-center text-primary-color text-base mb-2 sm:mb-4">
                             Enter your weight below and find your ideal conditions for wing foiling.
                         </div>
                     </div>

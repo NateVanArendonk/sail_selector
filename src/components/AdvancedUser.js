@@ -17,10 +17,10 @@ export default function AdvancedUser(props) {
                 <div className="flex item-center">
                     <div className="">
                         <div className="text-center">
-                            <h1 className="text-3xl sm:text-5xl text-gray-900 font-bold mb-2 sm:mb-0">
-                                Find the perfect <span className="text-primary">wing size.</span>
+                            <h1 className="text-3xl sm:text-5xl text-primary-color font-bold mb-2 sm:mb-0">
+                                Find the perfect <span className="text-second-color">wing size.</span>
                             </h1>
-                            <div className="mb-2 mx-4 inline-block font-light text-center text-gray-500 text-sm mb-2 sm:mb-4">
+                            <div className="mb-2 mx-4 inline-block font-light text-center text-primary-color text-sm mb-2 sm:mb-4">
                                 Enter your preferred wing size and wind speed where you are fully powered. We will take care of the rest.
                             </div>
                         </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSailboat } from "@fortawesome/free-solid-svg-icons";
-import { TERipple } from "tw-elements-react";
 import { useNavigate } from 'react-router-dom';
 
 export default function Navbar(props) {
@@ -17,7 +16,7 @@ export default function Navbar(props) {
     };
 
     return (
-        <nav className="flex flex-col sm:flex-row items-center justify-between bg-primary p-4">
+        <nav className="flex flex-col sm:flex-row items-center justify-between bg-primary-color p-4">
             <div className="flex items-center flex-shrink-0 text-white mb-2 sm:mb-0">
                 <FontAwesomeIcon icon={faSailboat} />
                 <span className="font-semibold text-xl tracking-tight">Sail Selector</span>
@@ -39,26 +38,28 @@ export default function Navbar(props) {
                 </label>
             </div>
 
-
-            <div className="flex flex-row items-center justify-center mt-2 sm:mt-0">                
-                <TERipple>
-                    <button
-                        type="button"
-                        className="inline-block mx-2 rounded border-2 border-secondary px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-white transition duration-100 ease-in-out hover:border-secondary-600 hover:bg-secondary-500 hover:bg-opacity-10 hover:text-white focus:border-secondary-600 focus:text-white-600 focus:outline-none focus:ring-0 active:border-secondary-700 active:text-white-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-                        onClick={navigateHome}
-                        >
-                        Home
-                    </button>
-                </TERipple>
-                <TERipple>
-                    <button
-                        type="submit"
-                        className="inline-block mx-2 rounded border-2 border-secondary px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-white transition duration-100 ease-in-out hover:border-secondary-600 hover:bg-secondary-500 hover:bg-opacity-10 hover:text-white focus:border-secondary-600 focus:text-white-600 focus:outline-none focus:ring-0 active:border-secondary-700 active:text-white-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-                        onClick={navigateToAbout}
-                        >
-                        About
-                    </button>
-                </TERipple>             
+            <div className="flex space-x-9">                
+                <button
+                    type="button"
+                    className="text-white group hover:text-second-color"
+                    onClick={navigateHome}
+                    >
+                    <span className="relative inline-block">
+                    Home
+                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-third-color origin-right transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </span>
+                        
+                </button>
+                <button
+                    type="submit"
+                    className="text-white group hover:text-second-color"
+                    onClick={navigateToAbout}
+                    >
+                    <span className="relative inline-block">
+                    About
+                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-third-color origin-right transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </span>
+                </button>
             </div>
         </nav>
     )
